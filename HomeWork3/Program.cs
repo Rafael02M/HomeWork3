@@ -12,11 +12,6 @@ namespace Project
             {
                 sumOfMainDiagonal += matrix[i, i];
                 sumOfSecondaryDiagonal += matrix[i, matrix.GetLength(1) - 1 - i];
-                for (int j = 0; j < matrix.GetLength(1); j++)
-                {
-                    Console.Write(matrix[i, j] + " ");
-                }
-                Console.WriteLine();
             }
             Console.WriteLine($"Sum of main diagonal: {sumOfMainDiagonal}");
             Console.WriteLine($"Sum of secondary diagonal: {sumOfSecondaryDiagonal}");
@@ -37,6 +32,14 @@ namespace Project
                 {
                     matrix[i, j] = random.Next(1, 10);
                 }
+            }
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write(matrix[i][j] + " ");
+                }
+                Console.WriteLine();
             }
             double diagonal = diagonalsOfMatrix(matrix);
             Console.WriteLine($"Divison of sums: {diagonal}");
